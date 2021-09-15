@@ -1,16 +1,26 @@
 {
-  "name": "supply-chain-E",
+  "name": "coffeeSupplyChain-udacity-project3",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "DApp Supply Chain project for Udacity Blockchain Developer nano-degree course.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
   "scripts": {
-    "dev": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "pk <pkrasam@gmail.com> (https://ipfs.infura.io/ipfs/QmSXiR9Khm3yo1J67nUopvVBxFJ8YGN2fUGZ34Etr3m92x/)",
-  "license": "MIT",
-  "devDependencies": {
-    "lite-server": "2.4.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javierftsp/coffeeSupplyChain-udacity-project3.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/javierftsp/coffeeSupplyChain-udacity-project3/issues"
+  },
+  "homepage": "https://github.com/javierftsp/coffeeSupplyChain-udacity-project3#readme",
+  "dependencies": {
+    "openzeppelin-solidity": "^2.5.0",
+    "truffle-hdwallet-provider": "^1.0.17"
   }
 }
