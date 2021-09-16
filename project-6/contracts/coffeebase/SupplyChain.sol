@@ -299,13 +299,13 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
   )
   {
     return (
-      items[_upc].sku,
-      items[_upc].upc,
-      items[_upc].originFarmerID,
-      items[_upc].originFarmName,
-      items[_upc].originFarmInformation,
-      items[_upc].originFarmLatitude,
-      items[_upc].originFarmLongitude
+      itemSKU = items[_upc].sku,
+      itemUPC = items[_upc].upc,
+      originFarmerID = items[_upc].originFarmerID,
+      originFarmName = items[_upc].originFarmName,
+      originFarmInformation = items[_upc].originFarmInformation,
+      originFarmLatitude = items[_upc].originFarmLatitude,
+      originFarmLongitude = items[_upc].originFarmLongitude
     );
   }
 
@@ -319,11 +319,11 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
   )
   {
     return(
-      items[_upc].sku,
-      items[_upc].upc,
-      items[_upc].productID,
-      items[_upc].productNotes,
-      items[_upc].productPrice
+      itemSKU = items[_upc].sku,
+      itemUPC = items[_upc].upc,
+      productID = items[_upc].productID,
+      productNotes = items[_upc].productNotes,
+      productPrice = items[_upc].productPrice
     );
   }
 
@@ -339,13 +339,13 @@ contract SupplyChain is Ownable, FarmerRole, DistributorRole, RetailerRole, Cons
   )
   {
     return(
-      items[_upc].sku,
-      items[_upc].upc,
-      items[_upc].ownerID,
-      uint(items[_upc].itemState),
-      items[_upc].distributorID,
-      items[_upc].retailerID,
-      items[_upc].consumerID
+      itemSKU = items[_upc].sku,
+      itemUPC = items[_upc].upc,
+      ownerID = items[_upc].ownerID,
+      itemState = uint(items[_upc].itemState),
+      distributorID = items[_upc].distributorID,
+      retailerID = items[_upc].retailerID,
+      consumerID = items[_upc].consumerID
     );
   }
 }
