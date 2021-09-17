@@ -128,9 +128,6 @@ App = {
         console.log('processId',processId);
 
         switch(processId) {
-            case 0:
-                return await App.addRoles(event);
-                break;
             case 1:
                 return await App.harvestItem(event);
                 break;
@@ -164,15 +161,58 @@ App = {
             case 11:
                 return await App.fetchItemBufferThree(event);
                 break;
-            }
+            case 12:
+                return await App.addFarmer(event);
+                break;
+            case 13:
+                return await App.addDistributor(event);
+                break;
+            case 14:
+                return await App.addRetailer(event);
+                break;
+            case 15:
+                return await App.addConsumer(event);
+                break;
+        }
     },
 
-    addRoles: async function(event) {
+    addFarmer: async function(event) {
         App.contracts.SupplyChain.deployed().then(function(instance) {
-            instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
-            instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
-            instance.addRetailer(App.retailerID, {from: App.metamaskAccountID});
-            instance.addConsumer(App.consumerID, {from: App.metamaskAccountID});
+            return instance.addFarmer(App.originFarmerID, {from: App.metamaskAccountID});
+        }).then(function(result) {
+            console.log('addFarmer',result);
+        }).catch(function(err) {
+            console.log(err.message);
+        });
+    },
+
+    addDistributor: async function(event) {
+        App.contracts.SupplyChain.deployed().then(function(instance) {
+            return instance.addDistributor(App.distributorID, {from: App.metamaskAccountID});
+        }).then(function(result) {
+            console.log('addDistributor',result);
+        }).catch(function(err) {
+            console.log(err.message);
+        });
+    },
+
+    addRetailer: async function(event) {
+        App.contracts.SupplyChain.deployed().then(function(instance) {
+            return instance.addRetailer(App.retailerID, {from: App.metamaskAccountID});
+        }).then(function(result) {
+            console.log('addRetailer',result);
+        }).catch(function(err) {
+            console.log(err.message);
+        });
+    },
+
+    addConsumer: async function(event) {
+        App.contracts.SupplyChain.deployed().then(function(instance) {
+            return instance.addConsumer(App.consumerID, {from: App.metamaskAccountID});
+        }).then(function(result) {
+            console.log('addConsumer',result);
+        }).catch(function(err) {
+            console.log(err.message);
         });
     },
 
