@@ -24,9 +24,7 @@ App = {
     },
 
     readForm: function () {
-        App.sku = $("#sku").val();
         App.upc = $("#upc").val();
-        App.ownerID = $("#ownerID").val();
         App.originFarmerID = $("#originFarmerID").val();
         App.originFarmName = $("#originFarmName").val();
         App.originFarmInformation = $("#originFarmInformation").val();
@@ -39,9 +37,7 @@ App = {
         App.consumerID = $("#consumerID").val();
 
         console.log(
-            App.sku,
             App.upc,
-            App.ownerID,
             App.originFarmerID,
             App.originFarmName,
             App.originFarmInformation,
@@ -313,6 +309,14 @@ App = {
             return instance.fetchItemBufferOne(App.upc, {from: App.metamaskAccountID});
         }).then(function(result) {
             console.log('fetchItemBufferOne', result);
+            $("#ftc-fetch-Data").empty();
+            $("#ftc-fetch-Data").append('<li>SKU: ' + result[0] + '</li>');
+            $("#ftc-fetch-Data").append('<li>UPC: ' + result[1] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Farmer ID: ' + result[2] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Farm Name: ' + result[3] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Farm Information: ' + result[4] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Farm Latitude: ' + result[5] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Farm Longitude: ' + result[6] + '</li>');
         }).catch(function(err) {
             console.log(err.message);
         });
@@ -323,6 +327,12 @@ App = {
             return instance.fetchItemBufferTwo(App.upc, {from: App.metamaskAccountID});
         }).then(function(result) {
             console.log('fetchItemBufferTwo', result);
+            $("#ftc-fetch-Data").empty();
+            $("#ftc-fetch-Data").append('<li>SKU: ' + result[0] + '</li>');
+            $("#ftc-fetch-Data").append('<li>UPC: ' + result[1] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Product Id: ' + result[2] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Product Notes: ' + result[3] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Product Price: ' + result[4] + '</li>');
         }).catch(function(err) {
             console.log(err.message);
         });
@@ -333,6 +343,14 @@ App = {
             return instance.fetchItemBufferThree(App.upc, {from: App.metamaskAccountID});
         }).then(function(result) {
             console.log('fetchItemBufferThree', result);
+            $("#ftc-fetch-Data").empty();
+            $("#ftc-fetch-Data").append('<li>SKU: ' + result[0] + '</li>');
+            $("#ftc-fetch-Data").append('<li>UPC: ' + result[1] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Current Owner ID: ' + result[2] + '</li>');
+            $("#ftc-fetch-Data").append('<li>State: ' + result[3] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Distributor ID: ' + result[4] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Retailer ID: ' + result[5] + '</li>');
+            $("#ftc-fetch-Data").append('<li>Consumer ID: ' + result[6] + '</li>');
         }).catch(function(err) {
             console.log(err.message);
         });
