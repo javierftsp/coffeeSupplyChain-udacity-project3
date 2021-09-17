@@ -106,6 +106,12 @@ Finally, add the Consumer Role (same as Farmer Role) and hit "Purchase" to chang
 ![transaction history](images/screenshot_transaction_history.png)
 
 
+## Built With
+
+* [Ethereum](https://www.ethereum.org/) - Ethereum is a decentralized platform that runs smart contracts
+* [Truffle Framework](http://truffleframework.com/) - Truffle is the most popular development framework for Ethereum with a mission to make your life a whole lot easier.
+* [web3 library](https://web3js.readthedocs.io/en/v1.5.2/) - Web3.js is a collection of libraries that allow you to interact with a local or remote ethereum node using HTTP, IPC or WebSocket.
+
 ## Versions
 * Truffle v5.4.8
 * Solidity ^0.4.24
